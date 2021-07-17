@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #need pyqt : pip3 install pyqt5
 
 import sys
