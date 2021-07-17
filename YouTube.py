@@ -1,3 +1,4 @@
+#need to install pytube to use the script
 import pytube
 from pytube import YouTube
 link = input(“Enter the link: “) #asking the link 
