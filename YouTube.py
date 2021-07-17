@@ -1,4 +1,4 @@
-#need to install pytube to use the script
+#need to install pytube to use the script : pip3 install pytube
 import pytube
 from pytube import YouTube
 link = input(“Enter the link: “) #asking the link 
