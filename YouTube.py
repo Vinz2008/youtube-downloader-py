@@ -2,4 +2,5 @@ import pytube
 from pytube import YouTube
 link = input(“Enter the link: “)
 yt = YouTube(link)
-yt.streams.filter(res="1080p").first().download()
+resolution = input("Enter the resolution")
+yt.streams.filter(res=resolution).first().download()
