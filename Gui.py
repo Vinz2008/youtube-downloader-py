@@ -16,3 +16,4 @@ helloMsg = QLabel('<h1>Welcome in Youtube Downloader Py!</h1>', parent=window)
 helloMsg.move(60, 15)
 
 window.show() #Show the gui
+sys.exit(app.exec_()) #run the event loop (allows to cleanly exit and release memory ressource when the app terminates)
