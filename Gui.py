@@ -15,4 +15,4 @@ window.move(60, 15)
 helloMsg = QLabel('<h1>Welcome in Youtube Downloader Py!</h1>', parent=window)
 helloMsg.move(60, 15)
 
-window.show()
+window.show() #Show the gui
