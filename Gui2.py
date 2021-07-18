@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QApplication, QWidget
 import sys
 
 #Subclass QMainWindow to customize the main window
-class MainWindow(QMainWindow);
+class MainWindow(QMainWindow):
   def _init_(self):
     super()._init_()
     
