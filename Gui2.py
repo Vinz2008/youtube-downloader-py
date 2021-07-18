@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import *
 import sys
 
 #Subclass QMainWindow to customize the main window
