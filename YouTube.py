@@ -21,4 +21,4 @@ p = 0
 while p <= 100:
   progress = p
   print("%i %%" % progress)
-  p = percent(bytes_remaining, size)
+  p = perc(bytes_remaining, size)
