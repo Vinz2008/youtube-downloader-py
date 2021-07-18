@@ -6,8 +6,12 @@ yt = YouTube(link)
 VideoOrAudio = input("Are you downloading  1.a video or 2.an audio (enter 1 or 2)") #asking if you are downloading an audio or a video
 #resolution = input("Enter the resolution") #asking the resolution
 if VideoOrAudio == "1":
-  yt.streams.filter(res='1080' , subtype = "mp4").first().download()
+  yt.streams.filter(file_extension='mp4') 
+  yt.streams.filter(res='1080').first().download()
+  yt.first().download()
 
 if VideoOrAudio == "2":
-  yt.streams.filter(res='1080' , subtype = "mp3").first().download()
+  yt.streams.filter(file_extension='mp4') 
+  yt.streams.filter(res='1080').first().download()
+  yt.first().download()
   
