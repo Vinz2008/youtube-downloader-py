@@ -16,3 +16,11 @@ if VideoOrAudio == "2":
   stream = yt.streams.get_by_itag(22)
   stream.download()
   
+def progress_function(self,stream, chunk,file_handle, bytes_remaining):
+
+    size = stream.filesize
+    p = 0
+    while p <= 100:
+        progress = p
+        print str(p)+'%'
+        p = percent(bytes_remaining, size)
