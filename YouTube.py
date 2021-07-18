@@ -13,7 +13,6 @@ if VideoOrAudio == "1":
 
 if VideoOrAudio == "2":
   yt.streams.filter(only_audio=True) 
-  yt.streams.filter(res="1080p")
   stream = yt.streams.get_by_itag(22)
   stream.download()
   
