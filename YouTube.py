@@ -11,7 +11,7 @@ if VideoOrAudio == "1":
   yt.first().download()
 
 if VideoOrAudio == "2":
-  yt.streams.filter(file_extension='mp4') 
+  yt.streams.filter(only_audio=True) 
   yt.streams.filter(res='1080').first().download()
   yt.first().download()
   
