@@ -8,7 +8,8 @@ VideoOrAudio = input("Are you downloading  1.a video or 2.an audio (enter 1 or 2
 if VideoOrAudio == "1":
   yt.streams.filter(file_extension='mp4') 
   yt.streams.filter(res='1080').first().download()
-  yt.first().download()
+  stream = yt.streams.get_by_itag(22)
+  stream.download()
 
 if VideoOrAudio == "2":
   yt.streams.filter(only_audio=True) 
