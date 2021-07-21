@@ -12,6 +12,6 @@ window = sg.Window('Youtube downloader py', layout)
 event, values = window.read() #needed for doing events with things in the layout ex: if a button is clicked
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED:
+    if event == sg.WIN_CLOSED or event == 'Exit':
         break
     
