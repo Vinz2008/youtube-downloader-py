@@ -2,9 +2,9 @@
 import PySimpleGUI as sg 
 sg.theme('SystemDefault') 
 layout = [[sg.Text('Welcome in youtube-downloader.py:'),
-           sg.Text(size=(15,1), key='-OUTPUT-')],
+           sg.Text(size=(15,1))],
           [sg.Text('Enter the url of the file you want to download:'),
-           sg.Text(size=(15,1), key='-OUTPUT-')]
+           sg.Text(size=(15,1))]
           [sg.Input(key='-IN-')],
           [sg.Button('Download'), sg.Button('Exit')]]
 
