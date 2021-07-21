@@ -26,8 +26,6 @@ while True:
     elif event == "Download":
         link=values["-URL-"]
         yt = YouTube(link)
-        listStreams = yt.streams
-        print(listStreams)
         title = yt.title
         yt.streams.filter(res="1080p")
         stream = yt.streams.get_by_itag(22)
