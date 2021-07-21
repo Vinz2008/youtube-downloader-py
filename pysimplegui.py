@@ -24,7 +24,7 @@ while True:
     if event == sg.WIN_CLOSED or event == "Exit":
         break
     elif event == "Download":
-        link=value["-URL-"]
+        link=values["-URL-"]
         yt = YouTube(link)
         listStreams = yt.streams
         print(listStreams)
@@ -32,8 +32,8 @@ while True:
         yt.streams.filter(res="1080p")
         stream = yt.streams.get_by_itag(22)
         stream.download()
-        start = value['-START-']
-        end = value['-END-']
+        start = values['-START-']
+        end = values['-END-']
         if start:
             if end:
                 start = int(start)                
