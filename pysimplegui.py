@@ -13,6 +13,7 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
           [sg.Input(key='url')],
           [sg.Text('Enter if you you want from where to where you want the video to be'),
            sg.Text(size=(15,1))]
+          [sg.Text('Start), sg.Input(key='start'), sg.Text('End'), sg.Input(key='end')]
           [sg.Button('Download'), sg.Button('Exit')]]
 
 window = sg.Window('Youtube downloader py', layout)
