@@ -27,7 +27,7 @@ while True:
         link=value["url"]
         yt = YouTube(link)
         print(yt.streams)
-        title = yt.title key='Fermer')]
+        title = yt.title
         yt.streams.filter(res="1080p")
         stream = yt.streams.get_by_itag(22)
         stream.download()
