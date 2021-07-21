@@ -35,4 +35,6 @@ while True:
         end = value['End']
         if start:
             if end:
-                ffmpeg_extract_subclip("video1.mp4", start_time, end_time, targetname="test.mp4")
+                start = int(start)                
+                end = int(end)
+                ffmpeg_extract_subclip("{}.mp4".format(title), start, end, targetname="{}.mp4".format(title))
