@@ -10,10 +10,10 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
            sg.Text(size=(15,1))],
           [sg.Text('Enter the url of the file you want to download:'),
            sg.Text(size=(15,1))]
-          [sg.Input(key='url')],
+          [sg.Input(key='Url')],
           [sg.Text('Enter if you you want from where to where you want the video to be'),
            sg.Text(size=(15,1))]
-          [sg.Text('Start), sg.Input(key='start'), sg.Text('End'), sg.Input(key='end')]
+          [sg.Text('Start), sg.Input(key='Start'), sg.Text('End'), sg.Input(key='End')]
           [sg.Button('Download'), sg.Button('Exit')]]
 
 window = sg.Window('Youtube downloader py', layout)
@@ -27,7 +27,7 @@ while True:
         link=value["url"]
         yt = YouTube(link)
         print(yt.streams)
-        title = yt.title
+        title = yt.title key='Fermer')]
         yt.streams.filter(res="1080p")
         stream = yt.streams.get_by_itag(22)
         stream.download()
