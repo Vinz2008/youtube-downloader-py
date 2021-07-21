@@ -10,10 +10,10 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
            sg.Text(size=(15,1))],
           [sg.Text('Enter the url of the file you want to download:'),
            sg.Text(size=(15,1))],
-          [sg.Input(key='Url')],
+          [sg.Input(key='-URL-')],
           [sg.Text('Enter if you you want from where to where you want the video to be'),
            sg.Text(size=(15,1))],
-          [sg.Text("Start"), sg.Input(key="Start"), sg.Text("End"), sg.Input(key="End")],
+          [sg.Text("Start"), sg.Input(key="-START-"), sg.Text("End"), sg.Input(key="-END-")],
           [sg.Button("Download"), sg.Button("Exit")]],
 
 window = sg.Window('Youtube downloader py', layout)
@@ -21,10 +21,10 @@ event, values = window.read() #needed for doing events with things in the layout
 
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'Exit':
+    if event == sg.WIN_CLOSED or event == "Exit":
         break
     elif event == "Download":
-        link=value["Url"]
+        link=value["-URL-"]
         yt = YouTube(link)
         listStreams = yt.streams
         print(listStreams)
@@ -32,8 +32,8 @@ while True:
         yt.streams.filter(res="1080p")
         stream = yt.streams.get_by_itag(22)
         stream.download()
-        start = value['Start']
-        end = value['End']
+        start = value['-START-']
+        end = value['-END-']
         if start:
             if end:
                 start = int(start)                
