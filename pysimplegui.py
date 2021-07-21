@@ -9,4 +9,4 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
           [sg.Button('Download'), sg.Button('Exit')]]
 
 window = sg.Window('Youtube downloader py', layout)
-  
+event, values = window.read() #needed for doing events with things in the layout ex: if a button is clicked
