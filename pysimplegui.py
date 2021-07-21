@@ -24,7 +24,7 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Exit':
         break
     elif event == "Download":
-        link=value["url"]
+        link=value["Url"]
         yt = YouTube(link)
         print(yt.streams)
         title = yt.title
