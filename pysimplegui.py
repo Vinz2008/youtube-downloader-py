@@ -1,3 +1,4 @@
+from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 #need PySimpleGui to run
 import PySimpleGUI as sg 
 #need to install pytube to use the script : pip3 install pytube
@@ -10,6 +11,8 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
           [sg.Text('Enter the url of the file you want to download:'),
            sg.Text(size=(15,1))]
           [sg.Input(key='url')],
+          [sg.Text('Enter if you you want from where to where you want the video to be'),
+           sg.Text(size=(15,1))]
           [sg.Button('Download'), sg.Button('Exit')]]
 
 window = sg.Window('Youtube downloader py', layout)
