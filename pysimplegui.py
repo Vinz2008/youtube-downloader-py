@@ -22,7 +22,7 @@ while True:
     elif event == download
         link=value["url"]
         yt = YouTube(link)
-        yt.streams.filter(file_extension='mp4') 
+        print(yt.streams)
         yt.streams.filter(res="1080p")
         stream = yt.streams.get_by_itag(22)
         stream.download()
