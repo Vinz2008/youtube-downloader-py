@@ -8,8 +8,8 @@ yt = YouTube(link)
 #VideoOrAudio = input("Are you downloading  1.a video or 2.an audio (enter 1 or 2): ") #asking if you are downloading an audio or a video
 #resolution = input("Enter the resolution") #asking the resolution
 #if VideoOrAudio == "1":
-yt.streams.filter(file_extension='mp4') 
-yt.streams.filter(res="1080p")
+
+yt.streams.filter(res="1080p", adaptative=True)
 stream = yt.streams.get_by_itag(22)
 stream.download()
 
