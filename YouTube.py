@@ -1,10 +1,7 @@
 #need to install pytube to use the script : pip3 install pytube
 import pytube
 from pytube import YouTube
-def progress_Check(stream = None, chunk = None, file_handle = None, remaining = None):
-    #Gets the percentage of the file that has been downloaded.
-    percent = (100*(file_size-remaining))/file_size
-    print("{:00.0f}% downloaded".format(percent))
+
  
 link = input('Enter the link: ') #asking the link 
 yt = YouTube(link,on_progress_callback=progress_Check)
