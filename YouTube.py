@@ -10,6 +10,8 @@ yt = YouTube(link)
 #if VideoOrAudio == "1":
 
 yt.streams.filter(res="1080p", adaptative=True)
+ListStreams = yt.streams
+print(ListStreams)
 stream = yt.streams.get_by_itag(22)
 stream.download()
 
