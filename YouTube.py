@@ -9,10 +9,9 @@ yt = YouTube(link)
 #resolution = input("Enter the resolution") #asking the resolution
 #if VideoOrAudio == "1":
 
-yt.streams.filter(res="1080p", adaptative=True)
-ListStreams = yt.streams
-print(ListStreams)
-stream = yt.streams.get_by_itag(22)
+
+yt.streams.first()
+stream = yt.streams.set_by_itag(22)
 stream.download()
 
 #if VideoOrAudio == "2":
