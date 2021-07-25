@@ -1,4 +1,4 @@
-
+import pafy
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 #need PySimpleGui to run
 import PySimpleGUI as sg 
@@ -30,6 +30,8 @@ while True:
         link = input('Enter the link: ')
         command = "youtube-dl -f best {} --verbose".format(link)
         os.system(command)
+        title = os.system('youtube-dl --skip-download --get-title --no-warnings {} | sed 2d)'.format(url))
+
         start = values['-START-']
         end = values['-END-']
         if start:
