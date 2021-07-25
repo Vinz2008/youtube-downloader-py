@@ -1,10 +1,7 @@
-import pafy
+
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 #need PySimpleGui to run
 import PySimpleGUI as sg 
-#need to install pytube to use the script : pip3 install pytube
-import pytube
-from pytube import YouTube
 import os
 sg.theme('SystemDefault') 
 layout = [[sg.Text('Welcome in youtube-downloader.py:'),
