@@ -33,14 +33,10 @@ while True:
         link = input('Enter the link: ')
         command = "youtube-dl -f best {} --verbose".format(link)
         os.system(command)
-        title = os.system('youtube-dl --skip-download --get-title --no-warnings {} | sed 2d)'.format(url))
-        url = link
-        video = pafy.new(url)
-        title = video.title
+    elif event == "Cut"        
+        title = values['-TITLE-']
         start = values['-START-']
         end = values['-END-']
-        if start:
-            if end:
-                start = int(start)                
-                end = int(end)
-                ffmpeg_extract_subclip("{}.mp4".format(title), start, end, targetname="{}.mp4".format(title))
+        start = int(start)                
+        end = int(end)
+        ffmpeg_extract_subclip("{}.mp4".format(title), start, end, targetname="{}.mp4".format(title))
