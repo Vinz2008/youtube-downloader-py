@@ -31,7 +31,9 @@ while True:
         command = "youtube-dl -f best {} --verbose".format(link)
         os.system(command)
         title = os.system('youtube-dl --skip-download --get-title --no-warnings {} | sed 2d)'.format(url))
-
+        url = link
+        video = pafy.new(url)
+        title = video.title
         start = values['-START-']
         end = values['-END-']
         if start:
