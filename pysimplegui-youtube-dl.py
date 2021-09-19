@@ -26,7 +26,7 @@ while True:
         break
     elif event == "Download":
         link=values["-URL-"]
-        os.system('pip3 install youtube-dl')
+        os.system('pip install youtube-dl')
         command = "youtube-dl -f best {} --verbose".format(link)
         os.system(command)
     elif event == "Cut":        
