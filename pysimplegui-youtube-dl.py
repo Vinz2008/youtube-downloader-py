@@ -10,6 +10,7 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
            sg.Text(size=(15,1))],
           [sg.Input(key='-URL-')],
           [sg.Button("Download")],
+          [sg.Text("",key="-CHARG-")],
           [sg.Text('Enter if you you want from where to where you want the video to be'),
            sg.Text(size=(15,1))],
           [sg.Text("Start"), sg.Input(key="-START-"), sg.Text("End"), sg.Input(key="-END-")],
@@ -25,10 +26,12 @@ while True:
     if event == sg.WIN_CLOSED or event == "Exit":
         break
     elif event == "Download":
+        window["-CHARG-"].update("Chargement")
         link=values["-URL-"]
         os.system('pip install youtube-dl')
         command = "youtube-dl -f best {} --verbose".format(link)
         os.system(command)
+        window["-CHARG-"].update("Finished")
     elif event == "Cut":        
         title = values['-TITLE-']
         start = values['-START-']
