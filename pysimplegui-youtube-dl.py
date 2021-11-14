@@ -1,5 +1,6 @@
-
-from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
+from __future__ import unicode_literals
+import ffmpy
+import youtube_dl
 #need PySimpleGui to run
 import PySimpleGUI as sg 
 import os
@@ -20,6 +21,19 @@ layout = [[sg.Text('Welcome in youtube-downloader.py:'),
 
 window = sg.Window('Youtube downloader py', layout)
 event, values = window.read() #needed for doing events with things in the layout ex: if a button is clicked
+def hook(d):
+    global filename
+    filename = d['filename']
+    if d['status'] == 'finished':
+        print('Converting...')
+    if d['status'] == 'downloading':
+        print(str(d['downloaded_bytes']) + 'bytes ' + '/' + str(d['total_bytes']) + 'bytes' )
+
+ydl_opts = {
+    'format': 'bestaudio/best',
+    'progress_hooks': [hook],
+    'outtmpl': '~/%(extractor)s-%(id)s-%(title)s.%(ext)s',
+}
 
 while True:
     event, values = window.read()
@@ -27,15 +41,21 @@ while True:
         break
     elif event == "Download":
         window["-CHARG-"].update("Chargement")
-        link=values["-URL-"]
-        os.system('pip install youtube-dl')
-        command = "youtube-dl -f best {} --verbose".format(link)
-        os.system(command)
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([link])
+
+        filename_final = filename.replace('.m4a','.mp4')
+        ff = ffmpy.FFmpeg(
+            inputs={"~/" filename: None},
+            outputs={"~/" + filename_final: None}
+        )
+        ff.run()
+        os.remove(~/filename)
         window["-CHARG-"].update("Finished")
     elif event == "Cut":        
         title = values['-TITLE-']
         start = values['-START-']
         end = values['-END-']
-        start = int(start)                
+        st = int(start)                
         end = int(end)
-        ffmpeg_extract_subclip("{}.mp4".format(title), start, end, targetname="{}.mp4".format(title))
+        
